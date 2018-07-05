@@ -1,0 +1,146 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+a.github {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.3;
+}
+
+a:hover.github {
+  opacity: 1;
+}
+
+.logo {
+  padding: 30px 0;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 34px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.overview {
+  background: #f6f6f6;
+  border-top: solid 1px #e6e6e6;
+  border-bottom: solid 1px #e6e6e6;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+.overview .header {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+}
+
+.overview .stats {
+  display: block;
+  text-align: center;
+}
+
+.overview .stats .stat {
+  display: inline-block;
+  width: 120px;
+}
+
+.overview .stats .stat .value {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 3px;
+}
+
+.overview .stats .stat .label {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #999;
+}
+
+section {
+  margin-top: 30px;
+  position: relative;
+  padding-left: 70px;
+  overflow: hidden;
+}
+
+section img {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+section .title {
+  padding-top: 2px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+section .subtitle {
+  padding: 2px 0 10px 0;
+  font-weight: 200;
+  font-size: 16px;
+  border-bottom: solid 1px #e6e6e6;
+}
+
+section .items {
+  padding-top: 10px;
+}
+
+section .item {
+  display: inline-block;
+  padding: 10px;
+  background: #f8f8f8;
+  margin: 10px 10px 10px 0;
+  border-radius: 5px;
+}
+
+section .item .word {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+section .item .label {
+  color: #777;
+  padding-top: 2px;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+footer {
+  padding: 30px 0 40px 0;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+footer a, footer a:visited, footer a:active {
+  text-decoration: none;
+  color: #009B00;
+}

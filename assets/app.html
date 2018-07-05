@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{{.Title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    {{.CSS}}
+  </style>
+</head>
+<body>
+  <a href="https://github.com/martinrue/frekvenco" target="_blank" class="github">
+    <svg width="28" height="28" class="" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+      <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+    </svg>
+  </a>
+
+  <div class="container">
+    <div class="logo">
+      <a href="{{.LogoLink}}" target="_blank">
+        <img src="{{.Logo}}" />
+      </a>
+    </div>
+
+    <h1>{{.Header1}}</h1>
+    <h2>{{.Header2}}</h2>
+  </div>
+
+  <div class="overview">
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <div class="value">{{.Analysis.Transcripts}}</div>
+          <div class="label">filmetoj</div>
+        </div>
+
+        <div class="stat">
+          <div class="value">{{.Analysis.Sentences}}</div>
+          <div class="label">frazoj</div>
+        </div>
+
+        <div class="stat">
+          <div class="value">{{.Analysis.Words}}</div>
+          <div class="label">vortoj</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Pronomoj</div>
+      <div class="subtitle">La pronomoj orditaj laŭ frekvenco</div>
+
+      <div class="items">
+        {{ range .Analysis.Pronouns }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Tensoj</div>
+      <div class="subtitle">La verbaj finaĵoj orditaj laŭ frekvenco</div>
+
+      <div class="items">
+        {{ range .Analysis.Tenses }}
+          <div class="item">
+            <div class="word">-{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Verboj</div>
+      <div class="subtitle">La 25 plejofte uzitaj verboj</div>
+
+      <div class="items">
+        {{ range .Analysis.Verbs }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Kunmetitaj</div>
+      <div class="subtitle">La 25 plejofte uzitaj kunmetitaj verboj</div>
+
+      <div class="items">
+        {{ range .Analysis.Compounds }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Adverboj</div>
+      <div class="subtitle">La 25 plejofte uzitaj adverboj</div>
+
+      <div class="items">
+        {{ range .Analysis.Adverbs }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Substantivoj</div>
+      <div class="subtitle">La 25 plejofte uzitaj substantivoj</div>
+
+      <div class="items">
+        {{ range .Analysis.Nouns }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Adjektivoj</div>
+      <div class="subtitle">La 25 plejofte uzitaj adjektivoj</div>
+
+      <div class="items">
+        {{ range .Analysis.Adjectives }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.BookIcon}}" />
+      <div class="title">Longaj</div>
+      <div class="subtitle">La 25 plej longaj vortoj</div>
+
+      <div class="items">
+        {{ range .Analysis.Longest }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Length}} literoj</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.Top25Icon}}" />
+      <div class="title">25</div>
+      <div class="subtitle">La 25 plejofte uzitaj vortoj entute</div>
+
+      <div class="items">
+        {{ range .Analysis.Top25 }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.Top100Icon}}" />
+      <div class="title">100</div>
+      <div class="subtitle">La 100 plejofte uzitaj vortoj entute</div>
+
+      <div class="items">
+        {{ range .Analysis.Top100 }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <section>
+      <img src="{{.Top500Icon}}" />
+      <div class="title">500</div>
+      <div class="subtitle">La 500 plejofte uzitaj vortoj entute</div>
+
+      <div class="items">
+        {{ range .Analysis.Top500 }}
+          <div class="item">
+            <div class="word">{{.Word}}</div>
+            <div class="label">{{.Frequency}} {{pluralise "uzo" .Frequency}}</div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      Tiu ĉi paĝo estis farita de <a href="https://github.com/martinrue/frekvenco" target="_blank">frekvenco</a>.
+    </div>
+  </footer>
+</body>
+</html>
