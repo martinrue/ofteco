@@ -45,3 +45,7 @@ Mf83hCF5Cxg
 ## Output
 
 Frekvenco outputs a standalone HTML rendering of the analysis to `stdout`.
+
+### Example
+
+[https://martinrue.com/frekvenco-evildea](https://martinrue.com/frekvenco-evildea).
