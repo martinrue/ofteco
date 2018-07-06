@@ -3,8 +3,8 @@ package renderer
 import (
 	"html/template"
 
-	"github.com/martinrue/frekvenco/analyser"
-	"github.com/martinrue/frekvenco/assets"
+	"github.com/martinrue/ofteco/analyser"
+	"github.com/martinrue/ofteco/assets"
 )
 
 type model struct {

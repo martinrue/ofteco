@@ -1,6 +1,6 @@
-# Frekvenco
+# Ofteco
 
-Frekvenco builds Esperanto usage stats from a list of YouTube videos.
+Ofteco builds Esperanto usage stats from a list of YouTube videos.
 
 ## Building
 
@@ -14,11 +14,11 @@ Both targets create binaries in the local `dist` directory.
 ## Usage
 
 ```
-→ ./dist/frekvenco --help
-Frekvenco (v0.0.1)
+→ ./dist/ofteco --help
+Ofteco (v0.0.1)
 
 Usage:
-  frekvenco [config]
+  ofteco [config]
 
 Application Config:
   --videos=     path to input file containing video IDs
@@ -44,8 +44,8 @@ Mf83hCF5Cxg
 
 ## Output
 
-Frekvenco outputs a standalone HTML rendering of the analysis to `stdout`.
+Ofteco outputs a standalone HTML rendering of the analysis to `stdout`.
 
 ### Example
 
-[https://martinrue.com/frekvenco-evildea](https://martinrue.com/frekvenco-evildea).
+[https://martinrue.com/ofteco-evildea](https://martinrue.com/ofteco-evildea).

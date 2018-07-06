@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"html/template"
 
-	"github.com/martinrue/frekvenco/assets"
+	"github.com/martinrue/ofteco/assets"
 )
 
 func renderTemplate(path string, data interface{}) (string, error) {

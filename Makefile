@@ -1,8 +1,8 @@
 build: assets
-	@go build -o ./dist/frekvenco ./cmd/frekvenco
+	@go build -o ./dist/ofteco ./cmd/ofteco
 
 build-linux: assets
-	@GOOS=linux GOARCH=amd64 go build -o ./dist/frekvenco-linux-amd64 ./cmd/frekvenco
+	@GOOS=linux GOARCH=amd64 go build -o ./dist/ofteco-linux-amd64 ./cmd/ofteco
 
 assets:
 	@esc -ignore=".go|.sketch" -prefix=assets -o ./assets/assets.go -pkg assets ./assets

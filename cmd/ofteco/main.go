@@ -6,15 +6,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/martinrue/frekvenco/analyser"
-	"github.com/martinrue/frekvenco/renderer"
-	"github.com/martinrue/frekvenco/transcript"
+	"github.com/martinrue/ofteco/analyser"
+	"github.com/martinrue/ofteco/renderer"
+	"github.com/martinrue/ofteco/transcript"
 )
 
-const usage = `Frekvenco (v0.0.1)
+const usage = `Ofteco (v0.0.1)
 
 Usage:
-  frekvenco [config]
+  ofteco [config]
 
 Application Config:
   --videos=     path to input file containing video IDs

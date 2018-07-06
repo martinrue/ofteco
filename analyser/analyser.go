@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/martinrue/frekvenco/transcript"
+	"github.com/martinrue/ofteco/transcript"
 )
 
 type wordFrequencyMap map[string]int
