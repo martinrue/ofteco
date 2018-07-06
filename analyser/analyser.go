@@ -174,6 +174,10 @@ func calculateTenseMetrics(words wordFrequencyMap) []WordFrequency {
 func calculateVerbMetrics(words wordFrequencyMap) []WordFrequency {
 	verbs := make([]WordFrequency, 0)
 
+	exceptions := map[string]bool{
+		"ĵus": true,
+	}
+
 	for word, frequency := range words {
 		endsWell := strings.HasSuffix(word, "i") ||
 			strings.HasSuffix(word, "is") ||
@@ -183,7 +187,9 @@ func calculateVerbMetrics(words wordFrequencyMap) []WordFrequency {
 			strings.HasSuffix(word, "u")
 
 		if len(word) >= 4 && endsWell {
-			verbs = append(verbs, WordFrequency{word, frequency})
+			if _, ok := exceptions[word]; !ok {
+				verbs = append(verbs, WordFrequency{word, frequency})
+			}
 		}
 	}
 
@@ -206,7 +212,7 @@ func calculateCompoundVerbMetrics(words wordList) []WordFrequency {
 		return strings.HasSuffix(word, "i")
 	}
 
-	compoundEndExceptions := map[string]bool{
+	exceptions := map[string]bool{
 		"mi":  true,
 		"vi":  true,
 		"ŝi":  true,
@@ -233,7 +239,7 @@ func calculateCompoundVerbMetrics(words wordList) []WordFrequency {
 		second := words[i+1]
 
 		if compoundStart(first) && compoundEnd(second) {
-			if _, ok := compoundEndExceptions[second]; !ok {
+			if _, ok := exceptions[second]; !ok {
 				compounds[fmt.Sprintf("%s %s", first, second)]++
 			}
 		}
@@ -255,6 +261,17 @@ func calculateCompoundVerbMetrics(words wordList) []WordFrequency {
 func calculateNounMetrics(words wordFrequencyMap) []WordFrequency {
 	nouns := make([]WordFrequency, 0)
 
+	exceptions := map[string]bool{
+		"tio":    true,
+		"kio":    true,
+		"ĉio":    true,
+		"nenio":  true,
+		"tion":   true,
+		"kion":   true,
+		"ĉion":   true,
+		"nenion": true,
+	}
+
 	for word, frequency := range words {
 		endsWell := strings.HasSuffix(word, "o") ||
 			strings.HasSuffix(word, "on") ||
@@ -262,7 +279,9 @@ func calculateNounMetrics(words wordFrequencyMap) []WordFrequency {
 			strings.HasSuffix(word, "ojn")
 
 		if len(word) >= 4 && endsWell {
-			nouns = append(nouns, WordFrequency{word, frequency})
+			if _, ok := exceptions[word]; !ok {
+				nouns = append(nouns, WordFrequency{word, frequency})
+			}
 		}
 	}
 
